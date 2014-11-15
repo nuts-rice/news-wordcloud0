@@ -5,6 +5,14 @@ import sys
 URLAlJazzera= Requests.get("http://www.aljazeera.com/")
 URLCNN=Requests.get("http://www.cnn.com/")
 URLMSNBC=Requests.get("http://www.nbcnews.com/")
+"""
+Gives us a tree datastruct from html
+"""
+TreeAJ=html.fromstring(URLAlJazzera.text)
+TreeCNN=html.fromstring(URLCNN.text)
+TreeNBC=html.fromstring(URLMSNBC.text)
+
+
 class wordCloud(object):
 ""initializes parameters""
 def __init__(self, maxWords = 150, backgroundColor = 'black', maxFontSize=none, width=300, height = 150, font = None):
