@@ -1,9 +1,10 @@
 ""script to generate a wordcloud from numberous news-sites""
-""http://www.jeffknupp.com/blog/2014/02/04/starting-a-python-project-the-right-way/""
+from lxml import html
+import requests
 import sys
-URLAlJazzera= "http://www.aljazeera.com/"
-URLCNN="http://www.cnn.com/"
-URLMSNBC="http://www.nbcnews.com/"
+URLAlJazzera= Requests.get("http://www.aljazeera.com/")
+URLCNN=Requests.get("http://www.cnn.com/")
+URLMSNBC=Requests.get("http://www.nbcnews.com/")
 class wordCloud(object):
 ""initializes parameters""
 def __init__(self, maxWords = 150, backgroundColor = 'black', maxFontSize=none, width=300, height = 150, font = None):
@@ -26,7 +27,7 @@ def main():
 pass
 
 def getText(self, text):
-""returns tuples of words with calculated frequency""
+"""returns tuples of words with calculated frequency"""
 d = {}
 ""returns 0 flag if text isn't unicode""
 exceptionFlag = re.UNICODE if type(text) is unicode else 0
